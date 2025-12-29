@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loading-screen" class="screen">
+        <h1 class="title">HAPPY<br>ANNIVERSARY <br>LOVE💗</h1>
+        <div class="loader-container">
+            <p>Loading...</p>
+            <div class="progress-bar"><div id="fill"></div></div>
+            <p id="percentage">0%</p>
+        </div>
+    </div>
+
+    <div id="warning-screen" class="screen hidden">
+        <div class="warning-box">
+            <img src="images/warning.jpg" alt="Warning" class="angry-img-warning">
+            <div class="dialog-bubble">
+                <p>Dapat alam mo yung password. Boombastic side-eye ka sa’kin! 😤</p>
+            </div>
+            <button class="proceed-btn" onclick="goToPassword()">OK!</button>
+        </div>
+    </div>
+
+    <div id="password-screen" class="screen hidden">
+        <div class="keypad-container">
+            <div class="display-box">
+                <input type="text" id="password-input" placeholder="Enter password" readonly>
+            </div>
+            <div class="keypad">
+                <button onclick="press(1)">1</button>
+                <button onclick="press(2)">2</button>
+                <button onclick="press(3)">3</button>
+                <button onclick="press(4)">4</button>
+                <button onclick="press(5)">5</button>
+                <button onclick="press(6)">6</button>
+                <button onclick="press(7)">7</button>
+                <button onclick="press(8)">8</button>
+                <button onclick="press(9)">9</button>
+                <button class="clear" onclick="clearInput()">C</button>
+                <button onclick="press(0)">0</button>
+                <button class="go" onclick="checkPassword()">Go</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="error-overlay" class="overlay hidden">
+        <div class="error-content">
+            <img src="images/angry.jpg" alt="Angry" class="angry-img-error">
+            <p class="error-text">ayusin mo ang desisyon mo sa buhay!! 😤</p>
+            <button class="retry-btn" onclick="closeError()">Try Again</button>
+        </div>
+    </div>
+
+    <div id="main-content" class="screen hidden">
+        <div class="envelope-area">
+             <div class="heart-card">❤️</div>
+             <p style="font-size: 1.5rem; color: #ff4d4d;">HAPPY ANNIVERSARY, LOVE!</p>
+             <button class="read-btn" onclick="alert('I Love You!')">READ ME</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

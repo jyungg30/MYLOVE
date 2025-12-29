@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVEY</title>
+    <link rel="stylesheet" href="dashboard-style.css">
+</head>
+<body>
+    <div id="heart-container"></div>
+
+    <div class="dashboard-wrapper">
+        <nav class="navbar">
+            <div class="nav-links">
+                <div class="nav-item active" onclick="openTab(event, 'home')">🏠 Home</div>
+                <div class="nav-item" onclick="openTab(event, 'message')">💌 Message</div>
+                <div class="nav-item" onclick="openTab(event, 'memories')">🎞️ Memories</div>
+            </div>
+            <div class="out-btn" onclick="window.location.href='index.html'">🚪 Out</div>
+        </nav>
+
+        <main class="main-content">
+            <section id="home" class="tab-content active">
+                <div class="home-card">
+                    <div class="profile-area">
+                        <div class="pfp left-pfp"><img src="images/me.jpg"></div>
+                        <div class="connector-path"><span class="plane">✈️</span></div>
+                        <div class="pfp right-pfp"><img src="images/him.jpg"></div>
+                    </div>
+                    <div class="days-counter-wrapper">
+                        <h1 id="days-together">731</h1>
+                        <p>Days of Love</p>
+                    </div>
+                    <div class="status-pill">
+                        Happy 2nd Anniversary, love! Two years down, and still counting every moment with you. ❤️
+                    </div>
+                </div>
+            </section>
+
+            <section id="message" class="tab-content">
+                <div class="message-wrapper">
+                    <p class="instruction-text">READ ME! READ ME! READ ME!</p>
+                    <div class="envelope-container">
+                        <div class="envelope-blue">
+                            <div class="flap-blue"></div>
+                            <div class="heart-pink-seal">❤️</div>
+                        </div>
+                    </div>
+
+                    <div id="prank-dialog">
+                        <img id="prank-img" src="">
+                        <p id="prank-text"></p>
+                    </div>
+
+                    <button class="open-btn" onclick="openLetter()">PRESS THIS</button>
+                </div>
+            </section>
+
+            <section id="memories" class="tab-content">
+                <div id="flashback-alert" class="custom-alert">
+                    <div class="alert-box">
+                        <h3>Loveyyyyyyy!</h3>
+                        <p>Here's the flashback of our memories...</p>
+                        <button class="alert-btn" onclick="showMemories()">View Memories ❤️</button>
+                    </div>
+                </div>
+
+                <div class="gallery-stack" id="actual-gallery" style="display: none;">
+                    <div class="polaroid" onclick="zoomMedia(this)" style="--angle: -5deg;">
+                        <div class="tape"></div>
+                        <img src="images/1.jpg">
+                        <div class="caption">Hindi ito ang una nating pag-uusap, pero sa app na ito dito nagsimula ang ating kwento.✨</div>
+                    </div>
+                    <div class="polaroid" onclick="zoomMedia(this)" style="--angle: 3deg;">
+                        <div class="tape"></div>
+                        <img src="images/2.jpg">
+                        <div class="caption">Mula sa app, dito muna ako nagpakilala😅 Hanggang sa napunta tayo sa totoong account.</div>
+                    </div>
+                    <div class="polaroid" onclick="zoomMedia(this)" style="--angle: -2deg;">
+                        <div class="tape"></div>
+                        <video src="images/vid2.mp4"></video>
+                        <div class="caption">Hanggang sa tuloy-tuloy ang ating kwento, at excited na ako sa susunod na kabanata. Iloveeyouuuu❤️</div>
+                    </div>
+                    <div class="polaroid" onclick="zoomMedia(this)" style="--angle: 6deg;">
+                        <div class="tape"></div>
+                        <video src="images/vid1.mp4"></video>
+                        <div class="caption">Not our first call, pero ito ang unang beses na naka-on cam ako 😳</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="letter-modal" class="modal">
+        <div class="letter-paper">
+            <div class="letter-header">Dear Love,</div>
+            <div class="letter-content">
+                <p>Happy 2nd Anniversary, myyy bebe, my lovey, and my everything! ❤️</p>
+                <p>Kahit malayo tayo sa isa't-isa, stay strong sa atin kahit dumadan pa tayo sa iba't ibang problema ay lagi nating panghawakan ang isa't-isa. Two years of laughter, late-night talks, sad moments, awayan, and endless memories that we share together.</p>
+                <p>I hope na magpatuloy tayong mag-grow at intindihin ang isa’t isa. And thank you for being my constant joy, my crying shoulder (kahit nakapalayo natin😅) for always being there para masasandalan sa bawat iyak ko, sa pakikinig ng mga rant ko sa buhay, at sa laging pagsuporta sa akin.</p>
+                <p>Cheers to us for making it two years, and to many more years making memories together even malayo tayo.</p>
+                <p class="letter-footer">I LOVE YOU, ALWAYS AND FOREVER</p>
+                <p class="signature">From your OA girly 😘 ❤️</p>
+            </div>
+            <button class="close-modal-btn" onclick="closeLetter()">CLOSE ❤️</button>
+        </div>
+    </div>
+
+    <div id="zoom-modal" class="zoom-overlay" onclick="closeZoom()">
+        <span class="close-zoom">&times;</span>
+        <img id="zoom-img" class="zoom-content">
+        <video id="zoom-vid" class="zoom-content" controls></video>
+    </div>
+
+    <script src="dashboard-script.js"></script>
+</body>
+</html>
